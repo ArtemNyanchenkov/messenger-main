@@ -11,8 +11,10 @@ const catalog = {
         })
         .then(() => {
             this._render();
-            this._addEvents();
             this._arrLenght();
+            this._addEvents();
+            this._showMess()
+            
         })
 
         
@@ -41,26 +43,45 @@ const catalog = {
         });
         this.container.innerHTML = htmlStr;
     },
+    _arrLenght(){
+        var countmes = this.messages.length;
+        document.querySelector('#colmes').innerHTML = countmes ;
+        
+    },
 
     _addEvents(){
         btns = document.querySelectorAll('.btn');
         btns.forEach((btn) =>{
             btn.addEventListener('click', () => {
+                this.messages.splice(0,1);
                 if(btn.parentNode.classList.contains('bolt')){
-                    btn.parentNode.classList.remove('bolt')
+                    btn.parentNode.classList.remove('bolt');
+                     document.querySelector('#colmes').innerHTML = this.messages.length
+                                   
+                    
                 }
             })
         })
     },
-    _arrLenght(){
-        a = document.querySelectorAll('.message');
-        b = a.length
-        console.log(b)
-    }
+
+    _showMess(){
+        clac = document.querySelector('.vidj');
+        cat = document.querySelector('.container');
+        clac.addEventListener('click', () => {
+            if(cat.classList.contains('hide')){
+                cat.classList.remove('hide')
+            }else{
+                cat.classList.add('hide')
+            }
+        })
+    },
+    
+
+
       
 }
 
-catalog.init();
+catalog.init(); 
 
 
 

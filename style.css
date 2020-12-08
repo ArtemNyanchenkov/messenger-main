@@ -24,8 +24,31 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    width: 1000px;
+    height: 700px;
 }
 
 .bolt {
     font-weight: bold;
+}
+
+.vidj {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(147, 147, 255, 0.616);
+    border: 1px solid rgb(4, 54, 121);
+    
+}
+
+.circle{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hide {
+    display: none;
 }
